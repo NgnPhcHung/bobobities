@@ -18,8 +18,13 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        mobileM: "375px",
+        mobileL: "425px",
+      },
       colors: {
         brand: "#d3b364",
+        coffee: "#392E2C",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

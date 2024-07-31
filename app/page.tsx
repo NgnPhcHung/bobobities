@@ -6,7 +6,7 @@ import { Slogan } from "@components/slogan/Slogan";
 
 export default function HomePage() {
   return (
-    <div>
+    <div className="w-screen">
       <HeroSection />
       <Slogan />
       <MenuSection />

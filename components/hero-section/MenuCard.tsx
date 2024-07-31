@@ -39,12 +39,12 @@ export const MenuCard = ({
         },
       }}
       className={cn(
-        "h-[360px] lg:w-72 w-full rounded-3xl relative group",
+        "h-64 lg:h-[360px] lg:w-72 w-full rounded-3xl relative group",
         background
       )}
     >
       <motion.div
-        className="h-[320px] w-full absolute "
+        className="h-52 lg:h-[320px] w-full absolute "
         initial={{
           y: -30,
         }}
@@ -60,7 +60,7 @@ export const MenuCard = ({
           src={src}
           alt={title}
           fill
-          className="bg-cover rounded-3xl transition-all duration-1000 ease-in-out "
+          className="object-cover rounded-3xl transition-all duration-1000 ease-in-out "
         />
       </motion.div>
       <div className="text-3xl lg:text-4xl font-semibold h-fit absolute bottom-0 left-0 text-white p-4">

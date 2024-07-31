@@ -1,15 +1,20 @@
-"use client";
-
-import Link from "next/link";
+"use client"
 
 import useViewport from "@hooks/useViewport";
-import Image from "next/image";
+import { useEffect, useState } from "react";
 import { NavbarDesktop } from "./NavbarDesktop";
 import { NavbarMobile } from "./NavbarMobile";
 import { Button } from "./ui/button";
+import Link from "next/link";
+import Image from "next/image";
 
 export function Navbar() {
-  const { width = 0, height } = useViewport();
+  const { width = 0 } = useViewport();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <div className="w-full flex items-center justify-between p-1 px-4 bg-white fixed top-0 left-0 z-50">
@@ -24,18 +29,19 @@ export function Navbar() {
         </div>
       </Link>
 
-      {width >= 769 && <NavbarDesktop />}
+      {isMounted && width <= 769 && <NavbarMobile />}
+      {isMounted && width >= 769 && <NavbarDesktop />}
 
-      {width <= 769 && <NavbarMobile />}
-
-      <Link
-        href="https://www.clover.com/online-ordering/bobo-bites-arlington"
-        target="_blank"
-      >
-        <Button variant="default" className="rounded-xl">
-          Order pickup
-        </Button>
-      </Link>
+      {isMounted && width >= 769 && (
+        <Link
+          href="https://www.clover.com/online-ordering/bobo-bites-arlington"
+          target="_blank"
+        >
+          <Button variant="default" className="rounded-xl">
+            Order pickup
+          </Button>
+        </Link>
+      )}
     </div>
   );
 }
