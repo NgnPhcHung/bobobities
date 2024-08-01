@@ -1,17 +1,19 @@
+import { ImageCard } from "./ImageCard";
+
 export const Banner = () => {
   return (
-    <div className="px-4 w-screen h-screen bg-red-400 ">
-      People always say that everything happens for a reason. That there is a
-      silver lining in every thunderstorm. Four years ago, four women from four
-      different backgrounds found each other under the difficult circumstances
-      of the pandemic. A time where the world stopped, but our dreams continued.
-      We shared a desire to create sweet treats that represent our heritage and
-      culture. Our philosophy is to spread love one bite at a time. The
-      inception of BOBO Bites was born from a sketch on a napkin in a home
-      kitchen during the pandemic and has now materialized into our first brick
-      and mortar store in Arlington. BOBO Bites strives to recreate, re-imagine,
-      and redefine what bubble tea, coffee, and Vietnamese sweet treats can be.
-      Come join us and be apart of the BOBO Bites family. Calling all Biters!
+    <div className="bg-primary-foreground px-4 w-full p-6 flex flex-col items-center">
+      <div className="text-2xl lg:text-6xl 2xl:8xl text-center uppercase font-bold">
+        &ldquo; More than just coffee,
+      </div>
+      <div className="text-2xl lg:text-6xl 2xl:8xl text-center uppercase font-bold">
+        Welcome to your second home &rdquo;
+      </div>
+      <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 gap-x-6 mt-10 w-/4/5 lg:max-w-[1024px] md:max-w-xl">
+        <ImageCard  src="/images/banner/banner_img.jpg" text="comfortable"/>
+        <ImageCard src="/images/banner/banner_desert.jpg" text="high quality"/>
+        <ImageCard src="/images/banner/banner_drinks.jpg" text="recharge"/>
+      </div>
     </div>
   );
 };

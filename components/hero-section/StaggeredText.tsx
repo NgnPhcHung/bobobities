@@ -23,7 +23,7 @@ export const StaggeredText = () => {
     <motion.div
       initial="initial"
       whileHover="hovered"
-      className="relative block overflow-hidden whitespace-nowrap text-4xl sm:text-7xl md:text-6xl xl:text-8xl"
+      className="relative block overflow-hidden whitespace-nowrap text-4xl sm:text-5xl md:text-6xl xl:text-8xl"
     >
       <div>
         {STRING.map((l, i) => {

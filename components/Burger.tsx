@@ -21,7 +21,7 @@ const BurgerButton: FC<BurgerButtonProps> = ({ isOpen, setIsOpen }) => {
   };
 
   return (
-    <button
+    <div
       onClick={() => setIsOpen(!isOpen)}
       className="flex flex-col justify-around size-6 bg-transparent border-none cursor-pointer focus:outline-none"
       aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -47,7 +47,7 @@ const BurgerButton: FC<BurgerButtonProps> = ({ isOpen, setIsOpen }) => {
         className="block w-full h-1 bg-brand"
         transition={{ duration: 0.5 }}
       />
-    </button>
+    </div>
   );
 };
 

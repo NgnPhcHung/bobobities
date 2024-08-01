@@ -91,7 +91,7 @@ export const Slogan = () => {
         </motion.div>
       </div>
 
-      <div className="flex items-center justify-center bg-brand p-8 lg:p-0">
+      <div className="flex items-center justify-center bg-brand p-6 lg:p-0">
         {width <= 768 && (
           <motion.div className="relative space-x-3 h-8 overflow-hidden">
             <AnimatePresence>
@@ -111,7 +111,7 @@ export const Slogan = () => {
         )}
 
         {width > 768 && (
-          <div className="flex items-center justify-center bg-brand p-8">
+          <div className="flex items-center justify-center bg-brand p-8 py-3">
             {sloganBottom.map((slogan, idx) => (
               <div key={idx} className="flex items-center ">
                 <Coffee

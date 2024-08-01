@@ -39,14 +39,14 @@ export const MenuCard = ({
         },
       }}
       className={cn(
-        "h-64 lg:h-[360px] lg:w-72 w-full rounded-3xl relative group",
+        "h-56 lg:h-[360px] lg:w-72 w-4/5 rounded-3xl relative group",
         background
       )}
     >
       <motion.div
         className="h-52 lg:h-[320px] w-full absolute "
         initial={{
-          y: -30,
+          y: -34,
         }}
         whileHover={{
           y: -45,

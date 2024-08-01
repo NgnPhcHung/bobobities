@@ -1,5 +1,6 @@
 import { MenuCard, MenuCardProps } from "./MenuCard";
 import { StaggeredText } from "./StaggeredText";
+import { Video } from "./Video";
 
 const menu: MenuCardProps[] = [
   {
@@ -45,18 +46,20 @@ const menu: MenuCardProps[] = [
 
 export const HeroSection = () => {
   return (
-    <div className="w-full h-fit sm:h-screen overflow-hidden relative flex flex-col items-center justify-center space-y-10 mb-5 bg-primary-foreground]">
+    <div className="w-full min-h-fit overflow-hidden relative flex flex-col items-center justify-center space-y-10 mb-5 bg-primary-foreground]">
+      <Video />
+
       <div className="flex items-center space-x-1">
         <StaggeredText />
         <span className="text-4xl sm:text-7xl md:text-8xl text-brand">!</span>
       </div>
 
       <div className="flex items-center space-y-4 flex-col w-full">
-        <div className="font-semibold self-start lg:self-center pl-10 lg:pl-0 capitalize text-2xl lg:text-4xl md:mb-12 mb-6">
-         Popular <span className="text-brand underline">Now:</span>
+        <div className="font-semibold self-start lg:self-center pl-4  capitalize text-2xl lg:text-4xl md:mb-12 mb-6">
+          Here We <span className="text-brand underline">Have:</span>
         </div>
 
-        <div className="flex flex-col sm:space-y-0 space-y-10 sm:flex-row items-center lg:items-start justify-center gap-4 container">
+        <div className="flex flex-col sm:space-y-0 space-y-10 sm:flex-row items-center lg:items-start justify-center gap-4 h-full w-full px-3">
           {menu.map((item) => (
             <MenuCard {...item} key={item.id} />
           ))}

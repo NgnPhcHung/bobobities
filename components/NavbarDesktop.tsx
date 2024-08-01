@@ -10,11 +10,18 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "./ui/navigation-menu";
+import { NavItem } from "./NavItem";
 
 export const NavbarDesktop = () => {
   return (
     <NavigationMenu>
       <NavigationMenuList>
+        <NavigationMenuItem>
+          <Link href="/">
+            <NavItem name="/">Home</NavItem>
+          </Link>
+        </NavigationMenuItem>
+
         <NavigationMenuItem>
           <NavigationMenuTrigger>Menu</NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -28,16 +35,12 @@ export const NavbarDesktop = () => {
 
         <NavigationMenuItem>
           <Link href="/about-us">
-            <Button variant="ghost">About Us</Button>
+            <NavItem name="/about-us">About Us</NavItem>
           </Link>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <Button variant="ghost">Menu</Button>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <Button variant="ghost">Contact us</Button>
+          <NavItem name="/contact-us">Contact us</NavItem>
         </NavigationMenuItem>
 
         {/* <NavigationMenuItem>

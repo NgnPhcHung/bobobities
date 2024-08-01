@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import useViewport from "@hooks/useViewport";
 import { useEffect, useState } from "react";
@@ -7,19 +7,37 @@ import { NavbarMobile } from "./NavbarMobile";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import useScroll from "@hooks/useScroll";
+import { cn } from "@lib/utils";
 
 export function Navbar() {
   const { width = 0 } = useViewport();
-  const [isMounted, setIsMounted] = useState(false);
+  const scrollY = useScroll();
+  const isScrolled = scrollY > 0;
 
+  const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
   return (
-    <div className="w-full flex items-center justify-between p-1 px-4 bg-white fixed top-0 left-0 z-50">
+    <div
+      className={cn(
+        "w-full flex items-center justify-between p-1 px-4 bg-white fixed top-0 left-0 z-50",
+        {
+          "bg-opacity-80 backdrop-blur-md": isScrolled,
+        }
+      )}
+    >
       <Link href="/">
-        <div className="rounded-full self-start justify-self-start size-20 relative">
+        <div
+          className={cn(
+            "rounded-full self-start justify-self-start size-20 relative",
+            {
+              "size-16": isScrolled,
+            }
+          )}
+        >
           <Image
             src="/images/logos/logo_1.PNG"
             alt="app-banner-hero"
