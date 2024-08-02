@@ -1,5 +1,3 @@
-import { PropsWithChildren } from "react";
-
-export default function MenusPage({ children }: PropsWithChildren) {
+export default function MenusPage() {
   return <div> menu page</div>;
 }
