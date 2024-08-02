@@ -1,5 +1,4 @@
-import { PropsWithChildren } from "react";
 
-export default function ContactPage({ children }: PropsWithChildren) {
+export default function ContactPage() {
   return <div> Tea page</div>;
 }
