@@ -37,6 +37,10 @@ export const NavbarMobile = () => {
       name: "About Us",
       url: "/about-us",
     },
+    {
+      name: "Contact Us",
+      url: "/contact-us",
+    },
   ];
 
   const handleClose = () => {

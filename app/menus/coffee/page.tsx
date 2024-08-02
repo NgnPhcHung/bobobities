@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { PropsWithChildren } from "react";
 
 export default function CoffeePage() {
   const mockData = {

@@ -1,5 +1,3 @@
-import { PropsWithChildren } from "react";
-
-export default function OtherPage({ children }: PropsWithChildren) {
+export default function OtherPage() {
   return <div> OtherPage page</div>;
 }

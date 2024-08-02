@@ -1,5 +1,3 @@
-import { PropsWithChildren } from "react";
-
-export default function TeaPage({ children }: PropsWithChildren) {
+export default function TeaPage() {
   return <div> Tea page</div>;
 }
