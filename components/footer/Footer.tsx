@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FooterCard, FooterCardProps } from "./FooterCard";
-import { Clock, Map } from "lucide-react";
+import { Clock, Facebook, Instagram, Mail, Map } from "lucide-react";
+import { Button } from "@components/ui/button";
 
 const JOIN_TEAM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSfcWUwfzN32AfHTk2LzmsxWTGrxhOoEUEGdC37sNczZJatx-Q/viewform";
@@ -57,12 +58,39 @@ export const Footer = () => {
     },
   ];
 
-
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center py-6 mt-4 lg:space-x-10 lg:space-y-0 space-y-6 bg-brand w-full">
       {footerData.map((footer) => (
         <FooterCard {...footer} key={footer.id} />
       ))}
+      <div className="space-x-3">
+        <Button
+          size="icon"
+          className="rounded-full bg-[#4267B2] size-8"
+          asChild
+        >
+          <Link href="https://www.facebook.com/eatbobobites/" target="_blank">
+            <Facebook className=" text-white size-4" />
+          </Link>
+        </Button>
+        <Button
+          size="icon"
+          className="rounded-full bg-[#E1306C] size-8"
+          asChild
+        >
+          <Link href="https://www.instagram.com/eatbobobites" target="_blank">
+            <Instagram className="size-4 text-white" />
+          </Link>
+        </Button>
+        <Link href="mailto:eatbobobites@gmail.com">
+          <Button
+            size="icon"
+            className="rounded-full bg-primary-foreground size-8"
+          >
+            <Mail className="size-4 text-primary" />
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 };

@@ -12,6 +12,8 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "./ui/drawer";
+import { Dialog, DialogTrigger } from "./ui/dialog";
+import { NearestShop } from "./NearestShop";
 
 interface NavItem {
   name: string;
@@ -24,22 +26,21 @@ export const NavbarMobile = () => {
 
   const navItems: NavItem[] = [
     {
+      name: "Home",
+      url: "/",
+    },
+    {
       name: "Menus",
       children: [
         { name: "Coffee", url: "/menus/coffee" },
         { name: "Tea", url: "/menus/tea" },
-        { name: "Smoothie", url: "/menus/smoothie" },
-        { name: "Kids", url: "/menus/kids" },
+        { name: "Bites", url: "/menus/bites" },
         { name: "Other", url: "/menus/other" },
       ],
     },
     {
       name: "About Us",
       url: "/about-us",
-    },
-    {
-      name: "Contact Us",
-      url: "/contact-us",
     },
   ];
 
@@ -52,7 +53,7 @@ export const NavbarMobile = () => {
       <DrawerTrigger>
         <BurgerButton isOpen={isOpen} setIsOpen={setIsOpen} />
       </DrawerTrigger>
-      <DrawerContent className="right-0">
+      <DrawerContent className="right-0 z-[9999]">
         <DrawerHeader>
           <DrawerTitle>
             <DrawerClose>
@@ -70,9 +71,17 @@ export const NavbarMobile = () => {
             <div className="h-fit space-y-5">
               {navItems.map((item) => (
                 <div key={item.name}>
-                  <div className="font-bold text-2xl text-primary/85 text-start">
-                    {item.name}
-                  </div>
+                  {item.url ? (
+                    <Link href={item.url}>
+                      <div className="font-bold text-2xl text-primary/85 text-start"  onClick={handleClose}>
+                        {item.name}
+                      </div>
+                    </Link>
+                  ) : (
+                    <div className="font-bold text-2xl text-primary/85 text-start">
+                      {item.name}
+                    </div>
+                  )}
                   <div className="h-full flex flex-col w-full space-y-4 pl-6">
                     {item.children?.map((child) => (
                       <Link href={child.url || ""} key={child.name} passHref>
@@ -88,18 +97,19 @@ export const NavbarMobile = () => {
                 </div>
               ))}
             </div>
-            <Link
-              href="https://www.clover.com/online-ordering/bobo-bites-arlington"
-              target="_blank"
-            >
-              <Button
-                variant="default"
-                size="lg"
-                className="w-full mt-6 justify-self-end"
-              >
-                Order pickup
-              </Button>
-            </Link>
+
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button
+                  variant="default"
+                  size="lg"
+                  className="w-full mt-6 justify-self-end"
+                >
+                  Order pickup
+                </Button>
+              </DialogTrigger>
+              <NearestShop />
+            </Dialog>
           </DrawerDescription>
         </DrawerHeader>
       </DrawerContent>

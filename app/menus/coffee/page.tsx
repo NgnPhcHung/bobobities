@@ -1,34 +1,35 @@
+"use client";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@components/ui/tabs";
 import Image from "next/image";
+import { useState } from "react";
 
-export default function CoffeePage() {
-  const mockData = {
-    title: "Coffee",
-    src: "/images/drinks_2/Ice Baileys Coffee Instagram Post Template.PNG",
-  };
+export default function Page() {
+  const [tab, setTab] = useState<"Arlington" | "Keller">("Arlington");
   return (
-    <div className="w-full h-full flex flex-wrap gap-4 space-y-6 items-center justify-center">
-      {Array.from({ length: 15 }).map((item, index) => (
-        <div
-          key={index}
-          className="flex flex-col items-center justify-between relative md:size-72 w-48 h-56"
-        >
-          <div className="size-48 rounded-xl relative">
-            <Image
-              className="object-cover rounded-xl"
-              fill
-              alt="coffee_image"
-              src={mockData.src}
-            />
-          </div>
-          <div>
-            <div className="font-semibold text-start">Hue Salted Coffee</div>
-            <div className="font-semibold text-start text-brand">
-              Milk coffee with salted sea cream
-            </div>
-            <div className="font-semibold text-start"> $3.64</div>
-          </div>
-        </div>
-      ))}
-    </div>
+    <Tabs defaultValue="Arlington">
+      <TabsList className="grid w-full grid-cols-2">
+        <TabsTrigger value="Arlington" onClick={() => setTab("Arlington")}>
+          Arlington
+        </TabsTrigger>
+        <TabsTrigger value="Keller" onClick={() => setTab("Keller")}>
+          Keller
+        </TabsTrigger>
+      </TabsList>
+      <TabsContent
+        value={tab}
+        className="w-[90vw] h-[80vw] flex justify-center relative"
+      >
+        <Image
+          src={
+            tab === "Arlington"
+              ? "/images/menus/1.jpg"
+              : "/images/menus/keller_coffee.png"
+          }
+          fill
+          className="object-contain"
+          alt="1"
+        />
+      </TabsContent>
+    </Tabs>
   );
 }

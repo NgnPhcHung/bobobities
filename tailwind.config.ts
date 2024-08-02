@@ -23,8 +23,8 @@ const config = {
         mobileL: "425px",
       },
       colors: {
-        brand: "#d3b364",
-        coffee: "#392E2C",
+        coffee: "#212121",
+        brand: "#6F4E37",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

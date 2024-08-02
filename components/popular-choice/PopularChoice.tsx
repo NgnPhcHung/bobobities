@@ -8,12 +8,11 @@ export const PopularChoice = () => {
   };
   return (
     <div className="w-full min-h-screen flex flex-col justify-center relative">
-      <PopularCard/>
-      <PopularCard/>
-      <PopularCard/>
+      <PopularCard />
+      <PopularCard />
+      <PopularCard />
 
-
-      <Rotator/>
+      <Rotator />
     </div>
   );
 };

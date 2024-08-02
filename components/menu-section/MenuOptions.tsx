@@ -4,53 +4,23 @@ import { Button } from "@components/ui/button";
 import { cn } from "@lib/utils";
 import { useState } from "react";
 import { MenuCardItem } from "./MenuCardItem";
-import { ScrollArea } from "@components/ui/scroll-area";
+import { allData, coffee, tea, special } from "./datas";
 
 enum MenuOpt {
   All = "All",
   Coffee = "Coffees",
-  MilkTea = "Milk Teas",
-  SpecialTea = " Special Teas",
+  Tea = "Teas",
+  Special = " Special",
 }
 
-const allData = [
-  {
-    title: "Test coffee",
-    price: 4.99,
-    receipt: "Coffee 50%, Milk 50%, total 190ml",
-    backgroundImage: "/images/drinks_2/Facetune_19-11-2023-18-08-35.jpg",
-  },
-  {
-    title: "Test coffee",
-    price: 4.99,
-    receipt: "Coffee 50%, Milk 50%, total 190ml",
-    backgroundImage: "/images/drinks_2/Facetune_19-11-2023-18-08-35.jpg",
-  },
-  {
-    title: "Test coffee",
-    price: 4.99,
-    receipt: "Coffee 50%, Milk 50%, total 190ml",
-    backgroundImage: "/images/drinks_2/Facetune_19-11-2023-18-08-35.jpg",
-  },
-  {
-    title: "Test coffee",
-    price: 4.99,
-    receipt: "Coffee 50%, Milk 50%, total 190ml",
-    backgroundImage: "/images/drinks_2/Facetune_19-11-2023-18-08-35.jpg",
-  },
-  {
-    title: "Test coffee",
-    price: 4.99,
-    receipt: "Coffee 50%, Milk 50%, total 190ml",
-    backgroundImage: "/images/drinks_2/Facetune_19-11-2023-18-08-35.jpg",
-  },
-  {
-    title: "Test coffee",
-    price: 4.99,
-    receipt: "Coffee 50%, Milk 50%, total 190ml",
-    backgroundImage: "/images/drinks_2/Facetune_19-11-2023-18-08-35.jpg",
-  },
-];
+
+
+const data = {
+  [MenuOpt.All]: allData,
+  [MenuOpt.Coffee]: coffee,
+  [MenuOpt.Tea]: tea,
+  [MenuOpt.Special]: special,
+};
 
 export const MenuOptions = () => {
   const [selectedTab, setSelectedTab] = useState<MenuOpt>(MenuOpt.All);
@@ -73,7 +43,7 @@ export const MenuOptions = () => {
         ))}
       </div>
       <div className="flex flex-wrap w-full lg:max-w-[1024px] items-center justify-center gap-4">
-        {allData.map((data, idx) => (
+        {data[selectedTab].map((data, idx) => (
           <MenuCardItem {...data} key={idx} />
         ))}
       </div>

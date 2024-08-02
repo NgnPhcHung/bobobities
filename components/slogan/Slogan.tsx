@@ -71,7 +71,7 @@ export const Slogan = () => {
 
   return (
     <div>
-      <div className="flex items-center justify-center bg-primary p-8 space-x-6">
+      <div className="flex items-center justify-center bg-secondary p-8 space-x-6">
         <motion.div
           className="flex"
           initial={{ x: 0 }}

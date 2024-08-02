@@ -28,6 +28,7 @@ export const NavbarDesktop = () => {
             <ul className="grid gap-3 p-2 w-48">
               <ListItem href="/menus/coffee" title="Coffee"></ListItem>
               <ListItem href="/menus/tea" title="Tea"></ListItem>
+              <ListItem href="/menus/bites" title="Bites"></ListItem>
               <ListItem href="/menus/other" title="Other"></ListItem>
             </ul>
           </NavigationMenuContent>
@@ -39,44 +40,8 @@ export const NavbarDesktop = () => {
           </Link>
         </NavigationMenuItem>
 
-        <NavigationMenuItem>
-          <NavItem name="/contact-us">Contact us</NavItem>
-        </NavigationMenuItem>
-
         {/* <NavigationMenuItem>
-          <div className="space-x-3">
-            <Button
-              size="icon"
-              className="rounded-full bg-[#4267B2] size-8"
-              asChild
-            >
-              <Link
-                href="https://www.facebook.com/eatbobobites/"
-                target="_blank"
-              >
-                <Facebook className=" text-white size-4" />
-              </Link>
-            </Button>
-            <Button
-              size="icon"
-              className="rounded-full bg-[#E1306C] size-8"
-              asChild
-            >
-              <Link
-                href="https://www.instagram.com/eatbobobites"
-                target="_blank"
-              >
-                <Instagram className="size-4 text-white" />
-              </Link>
-            </Button>
-
-            <Button
-              size="icon"
-              className="rounded-full bg-primary-foreground size-8"
-            >
-              <Mail className="size-4 text-primary" />
-            </Button>
-          </div>
+         
         </NavigationMenuItem> */}
       </NavigationMenuList>
     </NavigationMenu>

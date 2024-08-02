@@ -9,6 +9,8 @@ import Link from "next/link";
 import Image from "next/image";
 import useScroll from "@hooks/useScroll";
 import { cn } from "@lib/utils";
+import { Dialog, DialogTrigger } from "./ui/dialog";
+import { NearestShop } from "./NearestShop";
 
 export function Navbar() {
   const { width = 0 } = useViewport();
@@ -23,7 +25,7 @@ export function Navbar() {
   return (
     <div
       className={cn(
-        "w-full flex items-center justify-between p-1 px-4 bg-white fixed top-0 left-0 z-50",
+        "w-full flex items-center justify-between p-1 px-4 bg-black fixed top-0 left-0 z-[999]",
         {
           "bg-opacity-80 backdrop-blur-md": isScrolled,
         }
@@ -51,14 +53,18 @@ export function Navbar() {
       {isMounted && width >= 769 && <NavbarDesktop />}
 
       {isMounted && width >= 769 && (
-        <Link
-          href="https://www.clover.com/online-ordering/bobo-bites-arlington"
-          target="_blank"
-        >
-          <Button variant="default" className="rounded-xl">
-            Order pickup
-          </Button>
-        </Link>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button
+              variant="brand"
+              className="font-bold rounded-2xl w-fit border lg:border-0 hover:border border-primary self-center"
+              size="lg"
+            >
+              Order pickup
+            </Button>
+          </DialogTrigger>
+          <NearestShop />
+        </Dialog>
       )}
     </div>
   );

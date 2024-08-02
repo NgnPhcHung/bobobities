@@ -14,7 +14,7 @@ export const Video = () => {
       autoPlay
       preload="none"
     >
-      <source src="/videos/videoplayback.webm" type="video/webm" />
+      <source src="/videos/Crack Series (2).mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   );

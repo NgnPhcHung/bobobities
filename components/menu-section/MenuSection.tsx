@@ -1,6 +1,16 @@
 import { cn } from "@lib/utils";
 import { MenuOptions } from "./MenuOptions";
 import { Button } from "@components/ui/button";
+import Link from "next/link";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@components/ui/dialog";
+import { NearestShop } from "@components/NearestShop";
 
 export const MenuSection = () => {
   return (
@@ -28,13 +38,18 @@ export const MenuSection = () => {
       </div>
       <MenuOptions />
 
-      <Button
-        variant="ghost"
-        className="font-bold rounded-2xl w-fit border lg:border-0 hover:border border-primary self-center"
-        size="lg"
-      >
-        Browse All Products
-      </Button>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button
+            variant="ghost"
+            className="font-bold rounded-2xl w-fit border lg:border-0 hover:border border-primary self-center"
+            size="lg"
+          >
+            Browse All Products
+          </Button>
+        </DialogTrigger>
+        <NearestShop />
+      </Dialog>
     </div>
   );
 };
