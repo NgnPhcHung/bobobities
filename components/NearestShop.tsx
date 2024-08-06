@@ -19,14 +19,11 @@ export const NearestShop = () => {
                 href="https://www.clover.com/online-ordering/bobo-bites-arlington"
                 target="_blank"
               >
-                <Button id="arlington">ARLINGTON TX</Button>
+                <Button id="arlington">Arlington Texas</Button>
               </Link>
             </div>
 
             <div className=" flex items-center flex-col">
-              <p className="w-2/3 break-words text-center">
-                841 NORTH TARRANT PARKWAY, KELLER TEXAS{" "}
-              </p>
               <Link
                 href="https://www.clover.com/online-ordering/bobo-bites-keller"
                 target="_blank"
