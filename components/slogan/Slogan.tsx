@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import useViewport from "@hooks/useViewport";
 import { Coffee } from "lucide-react";
 import { cn } from "@lib/utils";
+import { PopularChoice } from "@components/popular-choice/PopularChoice";
 
 const slogans = [
   "Espresso Yourself",
@@ -90,7 +91,6 @@ export const Slogan = () => {
           ))}
         </motion.div>
       </div>
-
       <div className="flex items-center justify-center bg-brand p-6 lg:p-0">
         {width <= 768 && (
           <motion.div className="relative space-x-3 h-8 overflow-hidden">

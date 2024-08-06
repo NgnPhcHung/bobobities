@@ -35,6 +35,10 @@ export const Footer = () => {
           title: "4201 W Green Oaks Blvd Unit 416 Arlington, TX 76016",
           url: "https://www.google.com/maps/place/BoBo+Bites/@32.6806038,-97.1957067,17z/data=!4m6!3m5!1s0x864e654deca324a3:0xe6aba4b8091b5ac9!8m2!3d32.6806038!4d-97.1957067!16s%2Fg%2F11v9v_c9x6?hl=en&entry=tts&shorturl=1",
         },
+        {
+          title: "841 NORTH TARRANT PARKWAY, KELLER TEXAS",
+          url: "https://maps.app.goo.gl/6R9apD5qfQemkTag9",
+        },
       ],
     },
     {
@@ -59,11 +63,11 @@ export const Footer = () => {
   ];
 
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center py-6 mt-4 lg:space-x-10 lg:space-y-0 space-y-6 bg-brand w-full">
+    <div className="flex flex-col md:flex-row items-center justify-center py-6 mt-4 lg:space-x-10 lg:space-y-0 space-y-6 bg-brand w-full">
       {footerData.map((footer) => (
         <FooterCard {...footer} key={footer.id} />
       ))}
-      <div className="space-x-3">
+      <div className="space-y-3 flex flex-col items-center ml-4">
         <Button
           size="icon"
           className="rounded-full bg-[#4267B2] size-8"

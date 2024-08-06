@@ -15,9 +15,6 @@ export const NearestShop = () => {
         <DialogDescription asChild>
           <div className="space-y-4">
             <div className=" flex items-center flex-col">
-              <p className="w-2/3 break-words text-center">
-                4201 W GREEN OAKS BLVD STE 416, ARLINGTON TX{" "}
-              </p>
               <Link
                 href="https://www.clover.com/online-ordering/bobo-bites-arlington"
                 target="_blank"

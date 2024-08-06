@@ -1,16 +1,11 @@
-import { cn } from "@lib/utils";
-import { MenuOptions } from "./MenuOptions";
+import { NearestShop } from "@components/NearestShop";
 import { Button } from "@components/ui/button";
-import Link from "next/link";
 import {
   Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
+  DialogTrigger
 } from "@components/ui/dialog";
-import { NearestShop } from "@components/NearestShop";
+import { cn } from "@lib/utils";
+import { MenuOptions } from "./MenuOptions";
 
 export const MenuSection = () => {
   return (
@@ -28,14 +23,7 @@ export const MenuSection = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center pt-5 md:pt-15">
-        <p className="text-lg md:text-xl lg:text-4xl uppercase font-bold text-center">
-          With so much to choose from,
-        </p>
-        <p className="text-lg md:text-xl lg:text-4xl uppercase font-bold text-center">
-          your ideal coffee is just a click away
-        </p>
-      </div>
+
       <MenuOptions />
 
       <Dialog>

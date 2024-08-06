@@ -2,14 +2,13 @@
 
 import { HeroSection } from "@components/hero-section";
 import { MenuSection } from "@components/menu-section";
-import { Slogan } from "@components/slogan/Slogan";
+import { PopularChoice } from "@components/popular-choice/PopularChoice";
 
 export default function HomePage() {
   return (
     <div className="w-screen">
       <HeroSection />
-      <Slogan />
-      <MenuSection />
+      <PopularChoice />
     </div>
   );
 }
