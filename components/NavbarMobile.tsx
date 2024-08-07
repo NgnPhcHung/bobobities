@@ -17,7 +17,7 @@ import { NearestShop } from "./NearestShop";
 
 interface NavItem {
   name: string;
-  url?: string;
+  url: string;
   children?: NavItem[];
 }
 
@@ -30,20 +30,30 @@ export const NavbarMobile = () => {
       url: "/",
     },
     {
-      name: "Menus",
-      children: [
-        { name: "Coffee", url: "/menus/coffee" },
-        { name: "Tea", url: "/menus/tea" },
-        { name: "Bites", url: "/menus/bites" },
-        { name: "Other", url: "/menus/other" },
-      ],
-    },
-    {
       name: "About Us",
       url: "/about-us",
     },
   ];
-
+  const shopMenu = [
+    {
+      name: "Arlington Texas",
+      children: [
+        { name: "Coffee", url: "/menus/arlington/coffee" },
+        { name: "Tea", url: "/menus/arlington/tea" },
+        { name: "Bites", url: "/menus/arlington/bites" },
+        { name: "Other", url: "/menus/arlington/other" },
+      ],
+    },
+    {
+      name: "Keller Texas",
+      children: [
+        { name: "Coffee", url: "/menus/keller/coffee" },
+        { name: "Tea", url: "/menus/keller/tea" },
+        { name: "Bites", url: "/menus/keller/bites" },
+        { name: "Other", url: "/menus/keller/other" },
+      ],
+    },
+  ];
   const handleClose = () => {
     setIsOpen(false);
   };
@@ -71,18 +81,15 @@ export const NavbarMobile = () => {
             <div className="h-fit space-y-5">
               {navItems.map((item) => (
                 <div key={item.name}>
-                  {item.url ? (
-                    <Link href={item.url}>
-                      <div className="font-bold text-2xl text-primary/85 text-start"  onClick={handleClose}>
-                        {item.name}
-                      </div>
-                    </Link>
-                  ) : (
-                    <div className="font-bold text-2xl text-primary/85 text-start">
+                  <Link href={item.url}>
+                    <div
+                      className="font-bold text-2xl text-primary/85 text-start"
+                      onClick={handleClose}
+                    >
                       {item.name}
                     </div>
-                  )}
-                  <div className="h-full flex flex-col w-full space-y-4 pl-6">
+                  </Link>
+                  {/* <div className="h-full flex flex-col w-full space-y-4 pl-6">
                     {item.children?.map((child) => (
                       <Link href={child.url || ""} key={child.name} passHref>
                         <div
@@ -93,7 +100,7 @@ export const NavbarMobile = () => {
                         </div>
                       </Link>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </div>
