@@ -14,6 +14,7 @@ import {
 } from "./ui/drawer";
 import { Dialog, DialogTrigger } from "./ui/dialog";
 import { NearestShop } from "./NearestShop";
+import { Label } from "./ui/label";
 
 interface NavItem {
   name: string;
@@ -34,25 +35,18 @@ export const NavbarMobile = () => {
       url: "/about-us",
     },
   ];
-  const shopMenu = [
-    {
-      name: "Arlington Texas",
-      children: [
-        { name: "Coffee", url: "/menus/arlington/coffee" },
-        { name: "Tea", url: "/menus/arlington/tea" },
-        { name: "Bites", url: "/menus/arlington/bites" },
-        { name: "Other", url: "/menus/arlington/other" },
-      ],
-    },
-    {
-      name: "Keller Texas",
-      children: [
-        { name: "Coffee", url: "/menus/keller/coffee" },
-        { name: "Tea", url: "/menus/keller/tea" },
-        { name: "Bites", url: "/menus/keller/bites" },
-        { name: "Other", url: "/menus/keller/other" },
-      ],
-    },
+  const keller = [
+    { name: "Coffee", url: "/menus/keller/coffee" },
+    { name: "Tea", url: "/menus/keller/tea" },
+    { name: "Bites", url: "/menus/keller/bites" },
+    { name: "Other", url: "/menus/keller/other" },
+  ];
+
+  const arlington = [
+    { name: "Coffee", url: "/menus/arlington/coffee" },
+    { name: "Tea", url: "/menus/arlington/tea" },
+    { name: "Bites", url: "/menus/arlington/bites" },
+    { name: "Other", url: "/menus/arlington/other" },
   ];
   const handleClose = () => {
     setIsOpen(false);
@@ -89,18 +83,34 @@ export const NavbarMobile = () => {
                       {item.name}
                     </div>
                   </Link>
-                  {/* <div className="h-full flex flex-col w-full space-y-4 pl-6">
-                    {item.children?.map((child) => (
-                      <Link href={child.url || ""} key={child.name} passHref>
-                        <div
-                          className="w-full p-2 font-semibold text-xl !text-start cursor-pointer h-6"
-                          onClick={handleClose}
-                        >
-                          {child.name}
-                        </div>
-                      </Link>
-                    ))}
-                  </div> */}
+                </div>
+              ))}
+              <Label className="text-2xl border-0 border-b-[1px] border-solid border-gray-400">Arlington Texas</Label>
+
+              {arlington.map((item) => (
+                <div key={item.name}>
+                  <Link href={item.url}>
+                    <div
+                      className="font-bold text-xl text-primary/85 text-start"
+                      onClick={handleClose}
+                    >
+                      {item.name}
+                    </div>
+                  </Link>
+                </div>
+              ))}
+              <Label className="text-2xl border-0 border-b-[1px] border-solid border-gray-400">Keller Texas</Label>
+
+              {keller.map((item) => (
+                <div key={item.name}>
+                  <Link href={item.url}>
+                    <div
+                      className="font-bold text-xl text-primary/85 text-start"
+                      onClick={handleClose}
+                    >
+                      {item.name}
+                    </div>
+                  </Link>
                 </div>
               ))}
             </div>
