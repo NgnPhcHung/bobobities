@@ -4,13 +4,13 @@ import Image from "next/image";
 import { useState } from "react";
 enum Types {
   Coffee = "coffee",
-  Bites = "bites",
+  'Milk Tea' = "milkTea",
   Tea = "tea",
   Other = "other",
 }
 
 const typeShop: Record<Types, any> = {
-  bites: "/images/menus/keller_milktea.png",
+  milkTea: "/images/menus/keller_milktea.png",
   coffee: "/images/menus/keller_coffee.png",
   other: "/images/menus/keller_special.png",
   tea: "/images/menus/keller_tea.png",

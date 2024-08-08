@@ -6,13 +6,13 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 enum Types {
   Coffee = "coffee",
-  Bites = "bites",
+  'Milk Tea' = "milkTea",
   Tea = "tea",
   Other = "other",
 }
 
 const typeShop: Record<Types, any> = {
-  bites: "/images/menus/3.jpg",
+  milkTea: "/images/menus/3.jpg",
   coffee: "/images/menus/2.jpg",
   other: "/images/menus/4.jpg",
   tea: "/images/menus/keller_tea.png",
