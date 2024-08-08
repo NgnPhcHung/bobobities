@@ -13,7 +13,7 @@ function EmailForm() {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault(); // Prevent form from submitting traditionally
     const mailtoLink = `mailto:${"Eatbobobites@gmail.com"}?subject=${encodeURIComponent(
       "Plan your next event"
