@@ -1,0 +1,4 @@
+mailJS/gmail:
+    account:bobabites73@gmail.com
+    password:oipygfrmvqxsvoblqkwqnlbdfwbubgrq
+    serviceId:service_dp43kdk

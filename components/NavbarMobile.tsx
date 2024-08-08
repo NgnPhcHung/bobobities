@@ -43,8 +43,8 @@ export const NavbarMobile = () => {
       ],
     },
     {
-      name: "Event",
-      url: "/events",
+      name: "Catering",
+      url: "/catering",
     }, {
       name: "About Us",
       url: "/about-us",

@@ -2,6 +2,7 @@ import { AppShell } from "@components/AppShell";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@components/ui/toaster";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body className={fontSans.className}>
         <main>
           <AppShell>{children}</AppShell>
+          <Toaster />
         </main>
       </body>
     </html>

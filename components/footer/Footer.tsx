@@ -70,7 +70,7 @@ export const Footer = () => {
       {footerData.map((footer) => (
         <FooterCard {...footer} key={footer.id} />
       ))}
-      <div className="space-y-3 flex flex-col items-center ml-4">
+      <div className="lg:space-y-3 lg:space-x-0 space-x-4 flex flex-row lg:flex-col items-center justify-center lg:ml-4">
         <Button
           size="icon"
           className="rounded-full bg-[#4267B2] size-8"

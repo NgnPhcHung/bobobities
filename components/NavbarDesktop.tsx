@@ -32,8 +32,8 @@ export const NavbarDesktop = () => {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <Link href="/events">
-            <NavItem name="/events">Events</NavItem>
+          <Link href="/catering">
+            <NavItem name="/catering">Catering</NavItem>
           </Link>
         </NavigationMenuItem>
 
