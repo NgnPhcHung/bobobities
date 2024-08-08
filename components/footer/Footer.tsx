@@ -53,8 +53,11 @@ export const Footer = () => {
         {
           title: (
             <div className="flex flex-col items-center justify-center">
+              <div className="font-semibold">Arlington Texas:</div>
               <div>Mon – Sat: 10am – 9pm</div>
               <div>Sun: 10am – 8pm</div>
+              <div className="font-semibold">Arlington Texas:</div>
+              <div>Every day - 10am – 9pm </div>
             </div>
           ),
         },
