@@ -26,21 +26,9 @@ export const NavbarDesktop = () => {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Menu</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] divide-x-[1px] divide-solid divide-gray-400">
-              <div className="col-span-1 ">
-                <Label className="text-lg">Arlington Texas</Label>
-                <ListItem href="/menus/arlington/coffee" title="Coffee"></ListItem>
-                <ListItem href="/menus/arlington/tea" title="Tea"></ListItem>
-                <ListItem href="/menus/arlington/bites" title="Bites"></ListItem>
-                <ListItem href="/menus/arlington/other" title="Other"></ListItem>
-              </div>
-              <div className="col-span-1 pl-3">
-                <Label className="text-lg">Keller Texas</Label>
-                <ListItem href="/menus/keller/coffee" title="Coffee"></ListItem>
-                <ListItem href="/menus/keller/tea" title="Tea"></ListItem>
-                <ListItem href="/menus/keller/bites" title="Bites"></ListItem>
-                <ListItem href="/menus/keller/other" title="Other"></ListItem>
-              </div>
+            <ul className="grid gap-3 p-2 w-48">
+              <ListItem href="/menus/arlington" title="Arlington"></ListItem>
+              <ListItem href="/menus/keller" title="Keller"></ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>

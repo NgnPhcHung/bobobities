@@ -31,22 +31,17 @@ export const NavbarMobile = () => {
       url: "/",
     },
     {
+      name: "Arlington",
+      url: "/menus/arlington",
+    },
+    {
+      name: "Keller",
+      url: "/menus/keller",
+    },
+    {
       name: "About Us",
       url: "/about-us",
     },
-  ];
-  const keller = [
-    { name: "Coffee", url: "/menus/keller/coffee" },
-    { name: "Tea", url: "/menus/keller/tea" },
-    { name: "Bites", url: "/menus/keller/bites" },
-    { name: "Other", url: "/menus/keller/other" },
-  ];
-
-  const arlington = [
-    { name: "Coffee", url: "/menus/arlington/coffee" },
-    { name: "Tea", url: "/menus/arlington/tea" },
-    { name: "Bites", url: "/menus/arlington/bites" },
-    { name: "Other", url: "/menus/arlington/other" },
   ];
   const handleClose = () => {
     setIsOpen(false);
@@ -78,34 +73,6 @@ export const NavbarMobile = () => {
                   <Link href={item.url}>
                     <div
                       className="font-bold text-2xl text-primary/85 text-start"
-                      onClick={handleClose}
-                    >
-                      {item.name}
-                    </div>
-                  </Link>
-                </div>
-              ))}
-              <Label className="text-2xl border-0 border-b-[1px] border-solid border-gray-400">Arlington Texas</Label>
-
-              {arlington.map((item) => (
-                <div key={item.name}>
-                  <Link href={item.url}>
-                    <div
-                      className="font-bold text-xl text-primary/85 text-start"
-                      onClick={handleClose}
-                    >
-                      {item.name}
-                    </div>
-                  </Link>
-                </div>
-              ))}
-              <Label className="text-2xl border-0 border-b-[1px] border-solid border-gray-400">Keller Texas</Label>
-
-              {keller.map((item) => (
-                <div key={item.name}>
-                  <Link href={item.url}>
-                    <div
-                      className="font-bold text-xl text-primary/85 text-start"
                       onClick={handleClose}
                     >
                       {item.name}
