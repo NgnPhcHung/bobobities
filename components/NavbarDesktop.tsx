@@ -1,7 +1,7 @@
 import { cn } from "@lib/utils";
 import Link from "next/link";
 import React from "react";
-import { Button } from "./ui/button";
+import { NavItem } from "./NavItem";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -10,8 +10,6 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "./ui/navigation-menu";
-import { NavItem } from "./NavItem";
-import { Label } from "./ui/label";
 
 export const NavbarDesktop = () => {
   return (
@@ -31,6 +29,12 @@ export const NavbarDesktop = () => {
               <ListItem href="/menus/keller" title="Keller"></ListItem>
             </ul>
           </NavigationMenuContent>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <Link href="/events">
+            <NavItem name="/events">Events</NavItem>
+          </Link>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
