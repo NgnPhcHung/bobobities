@@ -13,8 +13,8 @@ function EmailForm() {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (event: any) => {
-    event.preventDefault(); // Prevent form from submitting traditionally
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     const mailtoLink = `mailto:${"Eatbobobites@gmail.com"}?subject=${encodeURIComponent(
       "Plan your next event"
     )}&body=${encodeURIComponent(message)}`;
@@ -22,7 +22,7 @@ function EmailForm() {
       title: "Success",
       description: "Your plan has been sended!",
     });
-    window.location.href = mailtoLink; // Trigger the mail client
+    window.location.href = mailtoLink;
   };
 
   return (
