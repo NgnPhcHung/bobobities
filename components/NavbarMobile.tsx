@@ -2,7 +2,9 @@ import { X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import BurgerButton from "./Burger";
+import { NearestShop } from "./NearestShop";
 import { Button } from "./ui/button";
+import { Dialog, DialogTrigger } from "./ui/dialog";
 import {
   Drawer,
   DrawerClose,
@@ -12,13 +14,10 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "./ui/drawer";
-import { Dialog, DialogTrigger } from "./ui/dialog";
-import { NearestShop } from "./NearestShop";
-import { Label } from "./ui/label";
 
 interface NavItem {
   name: string;
-  url: string;
+  url?: string;
   children?: NavItem[];
 }
 
@@ -31,12 +30,17 @@ export const NavbarMobile = () => {
       url: "/",
     },
     {
-      name: "Arlington",
-      url: "/menus/arlington",
-    },
-    {
-      name: "Keller",
-      url: "/menus/keller",
+      name: "Menu",
+      children: [
+        {
+          name: "Arlington",
+          url: "/menus/arlington",
+        },
+        {
+          name: "Keller",
+          url: "/menus/keller",
+        },
+      ],
     },
     {
       name: "About Us",
@@ -70,14 +74,32 @@ export const NavbarMobile = () => {
             <div className="h-fit space-y-5">
               {navItems.map((item) => (
                 <div key={item.name}>
-                  <Link href={item.url}>
-                    <div
-                      className="font-bold text-2xl text-primary/85 text-start"
-                      onClick={handleClose}
-                    >
+                  {item.url ? (
+                    <Link href={item.url}>
+                      <div
+                        className="font-bold text-2xl text-primary/85 text-start"
+                        onClick={handleClose}
+                      >
+                        {item.name}
+                      </div>
+                    </Link>
+                  ) : (
+                    <div className="font-bold text-2xl text-primary/85 text-start">
                       {item.name}
                     </div>
-                  </Link>
+                  )}
+                  <div className="h-full flex flex-col w-full space-y-4 pl-6">
+                    {item.children?.map((child) => (
+                      <Link href={child.url || ""} key={child.name} passHref>
+                        <div
+                          className="w-full p-2 font-semibold text-xl !text-start cursor-pointer h-6"
+                          onClick={handleClose}
+                        >
+                          {child.name}
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
